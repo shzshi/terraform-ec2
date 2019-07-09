@@ -1,0 +1,13 @@
+---
+
+- name: java 9 rpm / download and checksum
+  get_url:
+    url: http://download.oracle.com/otn-pub/java/jdk/9+181/jdk-9_linux-x64_bin.rpm
+    dest: /tmp
+    validate_certs: no
+    headers: "Cookie:' gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie'"
+    checksum: sha256:d035da618f6935f9a796c7dce31fa8f8e36e32f434de2d1d0b5cde42e021acc7
+
+- name: java rpm / install
+  yum:
+   name: /tmp/jdk-9_linux-x64_bin.rpm
