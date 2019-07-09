@@ -26,6 +26,8 @@ EOF
 
 * Terraform Run 
 
+```
 terraform init 
 terraform plan -var-file=ec2_instance.tfvars -input=false -out=terraform-plan
 terraform apply "terraform-plan"
+```
